@@ -90,159 +90,23 @@
         <div class="header-inner-wrap">
           <nav class="main-menu">
             <ul class="menu-primary-menu">
-              <li class="menu-item current-menu-item">
-                <a>Home</a>
-              </li>
-              <li class="menu-item menu-item-has-children">
-                <a href="javascript:void(0)">Tour List</a>
-                <ul class="sub-menu-2">
-                  <li class="menu-item">
-                    <h5 class="fw-6">Layout</h5>
-                    <ul class="sub-menu-3">
-                      <li class="menu-item">
-                        <a href="listing-tours-pagination.html"
-                          >Grid Style – Full Width</a
-                        >
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="menu-item">
-                    <h5 class="fw-6">Feature</h5>
-                    <ul class="sub-menu-3">
-                      <li class="menu-item">
-                        <a href="listing-tours-pagination.html"
-                          >Pagination Grid</a
-                        >
-                      </li>
-                      <li class="menu-item">
-                        <a href="listing-tours-pagination-2.html"
-                          >Pagination List</a
-                        >
-                      </li>
-                      <li class="menu-item">
-                        <a href="listing-tours-pagination-3.html"
-                          >Pagination Grid Style 2</a
-                        >
-                      </li>
-                      <li class="menu-item">
-                        <a href="listing-tours-loadmore.html"
-                          >Pagination Load More</a
-                        >
-                      </li>
-
-                      <li class="menu-item">
-                        <a href="listing-tours-topmap-1.html"
-                          >List Tours – Top Map 1</a
-                        >
-                      </li>
-                      <li class="menu-item">
-                        <a href="listing-tours-topmap-2.html"
-                          >List Tours – Top Map 2</a
-                        >
-                      </li>
-                      <li class="menu-item">
-                        <a href="listing-tours-topmap-3.html"
-                          >List Tours – Top Map 3</a
-                        >
-                      </li>
-                      <li class="menu-item">
-                        <a href="list-tour-sidebar-left.html"
-                          >List Tour – Sidebar Left</a
-                        >
-                      </li>
-                      <li class="menu-item">
-                        <a href="list-tour-sidebar-left-2.html"
-                          >List Tour – Sidebar Left 2</a
-                        >
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="menu-item">
-                    <h5 class="fw-6">Tour Styles</h5>
-                    <ul class="sub-menu-3">
-                      <li class="menu-item">
-                        <a href="listing-tours-pagination-2.html"
-                          >List Style</a
-                        >
-                      </li>
-                      <li class="menu-item">
-                        <a href="listing-tours-pagination.html"
-                          >Grid Style 01</a
-                        >
-                      </li>
-                      <li class="menu-item">
-                        <a href="listing-tours-pagination-3.html"
-                          >Grid Style 02</a
-                        >
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="menu-item">
-                    <h5 class="fw-6">Tour Details</h5>
-                    <ul class="sub-menu-3">
-                      <li class="menu-item">
-                        <a href="tours-details-1.html">Style 01</a>
-                      </li>
-                      <li class="menu-item">
-                        <a href="tours-details-2.html">Style 02</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li class="menu-item menu-item-has-children">
-                <a href="javascript:void(0)">Destination</a>
-                <ul class="sub-menu">
-                  <li class="menu-item">
-                    <a href="destination-style-1.html"
-                      >Destination Style 01</a
-                    >
-                  </li>
-                  <li class="menu-item">
-                    <a href="destination-style-2.html"
-                      >Destination Style 02</a
-                    >
-                  </li>
-                  <li class="menu-item">
-                    <a href="destination-style-3.html"
-                      >Destination Style 03</a
-                    >
-                  </li>
-                  <li class="menu-item">
-                    <a href="destination-details.html">Destination Details</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="menu-item menu-item-has-children">
-                <a href="javascript:void(0)">Blog</a>
-                <ul class="sub-menu">
-                  <li class="menu-item">
-                    <a href="blog-defaults.html">Blog Defaults</a>
-                  </li>
-                  <li class="menu-item">
-                    <a href="blog-post.html">Blog Detail </a>
-                  </li>
-                </ul>
-              </li>
-              <li class="menu-item menu-item-has-children">
-                <a href="javascript:void(0)">Pages</a>
-                <ul class="sub-menu">
-                  <li class="menu-item">
-                    <a href="about-us.html">About Us</a>
-                  </li>
-                  <li class="menu-item">
-                    <a href="our-team.html">Our Teams</a>
-                  </li>
-                  <li class="menu-item">
-                    <a href="FAQ.html">FAQs</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="menu-item">
-                <a href="contact-us.html">Contact Us</a>
-              </li>
+                <li class="menu-item {{ request()->routeIs('home') ? 'current-menu-item' : '' }}">
+                    <a href="{{ route('home') }}">Home</a>
+                </li>
+                <li class="menu-item {{ request()->routeIs('tour-list') ? 'current-menu-item' : '' }}">
+                    <a href="{{ route('tour-list') }}">Tour List</a>
+                </li>
+                <li class="menu-item {{ request()->routeIs('destination') ? 'current-menu-item' : '' }}">
+                    <a href="{{ route('destination') }}">Destination</a>
+                </li>
+                <li class="menu-item  {{ request()->routeIs('blog') ? 'current-menu-item' : '' }}">
+                    <a href="{{ route('blog') }}">Blog</a>
+                </li>
+                <li class="menu-item {{ request()->routeIs('contact') ? 'current-menu-item' : '' }}">
+                    <a href="{{ route('contact') }}">Contact</a>
+                </li>
             </ul>
-          </nav>
+        </nav>
           <div class="logo">
             <a href="index-2.html">
               <img
@@ -255,7 +119,7 @@
           </div>
           <div class="header-right">
             <div class="login">
-              <a href="#canvasLogin" data-bs-toggle="offcanvas">SIGN IN</a>
+              <a href="#" data-bs-toggle="offcanvas" data-bs-target="#canvasLogin" >SIGN IN</a>
             </div>
             <div class="line"></div>
             <div class="language">

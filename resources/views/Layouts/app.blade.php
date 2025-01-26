@@ -29,24 +29,37 @@
         <link rel="stylesheet" href="{{ asset('css/users/css/jquery-ui.min.css') }}" />
         <link rel="stylesheet" href="{{ asset('css/users/css/swiper-bundle.min.css') }}" />
         <link rel="stylesheet" href="{{ asset('css/users/css/styles.css') }}" />
+        <link rel="stylesheet" href="{{ asset('css/users/css/map.min.css') }}" />
         <link rel="stylesheet" href="{{ asset('/icons/icomoon/style.css') }}" />
         <link rel="stylesheet" href="{{ asset('image/logo/favicon.png') }}" />
         <link rel="stylesheet" href="{{ asset('image/logo/favicon.png') }}" />
         <link rel="stylesheet" href="{{ asset('/fonts/font-awesome/css/all.css') }}" />
 </head>
 <body>
+      <!-- Header -->
+
     @include('Components.users.header')
-    @include('Components.users.slider')
+      <!-- Slider chỉ hiển thị ở trang chủ -->
+      @if(Route::currentRouteName() === 'home')
+    
+      @include('Components.users.slider')
+     @endif
+      <!-- Main Content -->
     <div class="container">
         @yield('content')
     </div>
+      <!-- footer -->
     @include('Components.users.footer')
-{{-- <script src="{{asset('js/bootstrap.min.js')}}" ></script> --}}
+      <!-- Login and Register Modals -->
+      @include('components.users.login-modal')
+      @include('components.users.register-modal')
     <!-- Javascript -->
     <script type="text/javascript" src="{{asset('js/user/js/bootstrap.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/user/js/jquery.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/user/js/jquery-ui.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/user/js/lazysize.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/user/js/map.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/user/js/map.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/user/js/jquery.nice-select.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/user/js/wow.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/user/js/magnific-popup.min.js')}}"></script>
@@ -55,6 +68,10 @@
     <script type="text/javascript" src="{{asset('js/user/js/swiper-bundle.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/user/js/swiper.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/user/js/main.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/user/js/jquery-validate.js')}}"></script>
+    <script>
+      new WOW().init();
+  </script>
     <!-- /Javascript -->
 </body>
-</html>
+</html> 
